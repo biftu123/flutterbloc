@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutterbloc/Pages/myHomepage.dart';
+import 'package:flutterbloc/Pages/signpage.dart';
 import 'package:flutterbloc/Pages/wellcome.dart';
 import 'package:flutterbloc/bloc/wellcome/wellbloc.dart';
 
@@ -16,9 +18,13 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocProvider(create: (context) => Wellbloc(),
     child: ScreenUtilInit(
-        builder: (context, child) => const MaterialApp(
+        builder: (context, child) =>  MaterialApp(
               debugShowCheckedModeBanner: false,
               home: const Wellcome(),
+              routes: {
+"Myhomepage": (context)=>const Myhomepage(),
+"signpage": (context)=>const Signpage()
+              }
             )),);
   }
 }

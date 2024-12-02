@@ -122,8 +122,9 @@ class _WellcomeState extends State<Wellcome> {
                 curve: Curves.easeIn,
               );
             } else {
+              
               Navigator.of(context)
-                  .push(MaterialPageRoute(builder: (context) => Myhomepage()));
+                  .pushNamedAndRemoveUntil("signpage", (route)=>false);
             }
           },
           child: Container(
